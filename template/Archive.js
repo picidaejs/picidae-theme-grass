@@ -31,7 +31,7 @@ export function group(data, name = '', keyword) {
   )
 }
 
-export default ({data, render, publicPath, pluginData: {utils}, themeConfig: {pageSize = 2}, params: {page = 1, keyword = ''}}) => {
+export default ({data, render, publicPath, pluginData: {utils}, themeConfig: {pageSize = 2, title = 'Grass'}, params: {page = 1, keyword = ''}}) => {
   let posts = group(data, void 0, keyword && decodeURIComponent(keyword).split(/[ -]/));
   let pagination = {};
 
@@ -53,7 +53,7 @@ export default ({data, render, publicPath, pluginData: {utils}, themeConfig: {pa
   const next = pagination.next ? '/posts/' + pagination.next : null;
 
   return (
-    <DocumentTitle title={`imCuttle`}>
+    <DocumentTitle title={title}>
       <section className="container">
         <SearchBar />
         <ul className="home post-list">

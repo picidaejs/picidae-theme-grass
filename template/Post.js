@@ -48,7 +48,7 @@ const View = (props) => {
 
 
   return (
-    <DocumentTitle title={`${props.pageData.meta.title} - imCuttle`}>
+    <DocumentTitle title={`${props.pageData.meta.title} - ${themeConfig.title || 'Grass'}`}>
       <div className="post">
         <article className="post-block">
           <h1 className="post-title">{props.pageData.meta.title}</h1>
